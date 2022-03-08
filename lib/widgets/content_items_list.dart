@@ -68,6 +68,8 @@ class _ContentItemsListState extends State<ContentItemsList> {
                       child: Image.network(
                         bannerUrl,
                         fit: BoxFit.fill,
+                        //color: const Color.fromRGBO(255, 255, 255, 0.9),
+                        //colorBlendMode: BlendMode.modulate
                       ),
                     ),
                   ],
@@ -95,8 +97,7 @@ class _ContentItemsListState extends State<ContentItemsList> {
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                      backgroundColor:
-                                          Colors.black.withOpacity(0.2),
+                                      //backgroundColor: Colors.black.withOpacity(0.2),
                                       color: Colors.white,
                                       fontSize: 40,
                                       fontWeight: FontWeight.bold,
@@ -113,8 +114,7 @@ class _ContentItemsListState extends State<ContentItemsList> {
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
-                                      backgroundColor:
-                                          Colors.black.withOpacity(0.2),
+                                      //backgroundColor: Colors.black.withOpacity(0.2),
                                       color: Colors.white,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,

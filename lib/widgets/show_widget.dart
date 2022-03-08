@@ -27,6 +27,14 @@ class _ShowWidgetState extends State<ShowWidget> {
     widget.updateBanner(widget.contentItem.contentId);
   }
 
+  // return new badge color
+  static Color _getColorfromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+
   @override
   Container build(BuildContext context) {
     return Container(
@@ -60,7 +68,8 @@ class _ShowWidgetState extends State<ShowWidget> {
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                           color: (widget.contentItem.selected
-                              ? Colors.purple
+                              ? _getColorfromHex(
+                                  widget.contentItem.badges!.badgeBGColor!)
                               : Colors.grey),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(5.0)),
